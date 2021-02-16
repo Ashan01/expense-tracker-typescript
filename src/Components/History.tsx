@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import "../App.css";
-
 import { TransContext } from "../States/transContext";
-import { transactionTypes } from "../Types/types";
 
 export const History = () => {
    let { Transaction } = useContext(TransContext);
@@ -14,7 +12,7 @@ export const History = () => {
 
          <div>
             <ul className="transaction-list">
-               {Transaction.map((val: transactionTypes, ind: number) => {
+               {Transaction.map((val, ind) => {
                   return (
                      <li key={ind}>
                         <span>{val.desc}</span>

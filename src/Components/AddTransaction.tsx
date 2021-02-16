@@ -20,12 +20,20 @@ export const AddTransaction = () => {
          <form onSubmit={handleChange}>
             <label>Text</label>
             <br />
-            <input type="text" className="form-element" onChange={(e) => setDesc(e.target.value)} />
+            <input
+               type="text"
+               className="form-element"
+               onChange={(e) => setDesc(e.target.value)}
+            />
             <br />
             <br />
             <label>Amount</label>
             <br />
-            <input type="number" className="form-element" onChange={(e) => setAmount(Number(e.target.value))} />
+            <input
+               type="number"
+               className="form-element"
+               onChange={(e) => setAmount(Number(e.target.value))}
+            />
             <br />
             <br /> <button className="addBtn">Add Transaction</button>
          </form>

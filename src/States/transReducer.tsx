@@ -1,7 +1,6 @@
-import { actionType, transactionTypes } from "../Types/types";
+import { actionType, StateType } from "../Types/type";
 
-export const TransReducer = (state: any, action: actionType) => {
-   console.log("state===>", state);
+export const TransReducer = (state: StateType, action: actionType) => {
    switch (action.type) {
       case "ADD_TRANSACTION":
          return [action.payload, ...state];

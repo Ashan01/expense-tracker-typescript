@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from "react";
-
-import { actionType, transactionTypes, transTypo } from "../Types/types";
 import { TransReducer } from "./transReducer";
+import { actionType, StateType } from "../Types/type";
 
 const initialTransactions = [
    { desc: "Bills", amount: -500 },
@@ -9,14 +8,12 @@ const initialTransactions = [
    { desc: "Investments", amount: -3000 },
 ];
 
-export let TransContext: any = createContext(initialTransactions);
+export let TransContext = createContext(initialTransactions);
 
 export const TransProvider = ({ children }: { children: any }) => {
-   const [state, dispatch] = useReducer(TransReducer, initialTransactions);
+   const [state, dispatch] = useReducer(TransReducer, initialTransactions):any
 
-   console.log("state=>", state);
-
-   function addTransaction(obj: transactionTypes) {
+   function addTransaction(obj) {
       dispatch({
          type: "ADD_TRANSACTION",
          payload: {

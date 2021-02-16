@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { TransContext } from "../States/transContext";
-import { transactionTypes } from "../Types/types";
 
 export const Balance = () => {
    let { Transaction } = useContext(TransContext);
 
    function getIncome() {
       let Income = 0;
-      var i: any;
+      var i;
       for (i = 0; i < Transaction.length; i++) {
          if (Transaction[i].amount > 0) Income += Transaction[i].amount;
       }
@@ -16,7 +15,7 @@ export const Balance = () => {
 
    const getExpense = () => {
       let Expense = 0;
-      var i: any;
+      var i;
       for (i = 0; i < Transaction.length; i++) {
          if (Transaction[i].amount < 0) Expense += Transaction[i].amount;
       }
