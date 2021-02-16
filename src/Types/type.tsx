@@ -6,9 +6,12 @@ export type actionType = {
    };
 };
 
-export type StateType = [
-   {
-      desc: String;
-      amount: Number;
-   }
-];
+export type StateType = {
+   desc: String;
+   amount: Number;
+};
+
+export type transTypo = {
+   Transaction: StateType[];
+   addTransaction: React.FC<actionType>;
+};
